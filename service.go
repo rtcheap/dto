@@ -2,7 +2,8 @@ package dto
 
 // Status constants
 const (
-	StatusHealty ServiceStatus = "HEALTHY"
+	StatusHealty    ServiceStatus = "HEALTHY"
+	StatusUnhealthy ServiceStatus = "UNHEALTHY"
 )
 
 // ServiceStatus status string.
