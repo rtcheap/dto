@@ -14,5 +14,15 @@ func (s Session) String() string {
 
 // SessionStatistics statistics for the numbers of handled sessions
 type SessionStatistics struct {
-	Count uint64 `json:"count"`
+	Started uint64 `json:"started"`
+	Ended   uint64 `json:"ended"`
+}
+
+// InProgress callcualated the number of in progress sessions.
+func (s SessionStatistics) InProgress() uint64 {
+	return s.Started - s.Ended
+}
+
+func (s SessionStatistics) String() string {
+	return fmt.Sprintf("SessionStatistics(started=%d, ended=%d)", s.Started, s.Ended)
 }
