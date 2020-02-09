@@ -1,6 +1,8 @@
 package dto
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // Session user session.
 type Session struct {
@@ -25,4 +27,14 @@ func (s SessionStatistics) InProgress() uint64 {
 
 func (s SessionStatistics) String() string {
 	return fmt.Sprintf("SessionStatistics(started=%d, ended=%d)", s.Started, s.Ended)
+}
+
+// Reference generic reference.
+type Reference struct {
+	ID     string `json:"id,omitempty"`
+	System string `json:"system,omitempty"`
+}
+
+func (r Reference) String() string {
+	return fmt.Sprintf("Reference(id=%s, system=%s)", r.ID, r.System)
 }
